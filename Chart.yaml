@@ -1,0 +1,18 @@
+apiVersion: v2
+name: Elad-Project
+description: Helm chart for deploying Apache HTTP Server on Kubernetes with Deployment, storageclass, Service, PVC, and PV.
+type: application
+version: 0.1.0   # Helm Chart version
+appVersion: "1.0.0" # Application version
+
+keywords:
+  - apache
+  - kubernetes
+  - helm
+  - persistent-volume
+  - PersistentVolumeClaim
+  - service
+
+maintainers:
+  - name: Elad Dafna
+    email: eladdaf@gmail.com

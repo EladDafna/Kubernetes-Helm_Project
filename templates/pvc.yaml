@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Release.Name }}--std-apache-pvc
+spec:
+  storageClassName: std-class
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.persistentVolumeClaim.storage }}
+  selector:
+    matchLabels:
+      type: {{ .Release.Name }}--std-apache-pv  

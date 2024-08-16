@@ -1,0 +1,27 @@
+---
+
+replicaCount: 3
+
+containers:
+  image: httpd
+
+resources:
+  cpu: 0.1
+  memory: 100Mi
+limits:
+  cpu: 0.25
+  memory: 100Mi
+
+rollingUpdate:
+  maxSurge: 2
+  maxUnavailable: 1
+  
+persistentVolume:
+  storage: 100Mi
+  
+persistentVolumeClaim:
+  storage: 10Mi
+
+nfs:
+  server: 10.0.0.10
+  path: /home/docker/volume_kubernetes

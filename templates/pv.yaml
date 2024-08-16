@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Release.Name }}--std-apache-pv
+  labels:
+    type: {{ .Release.Name }}--std-apache-pv
+spec:
+  storageClassName: std-class
+  capacity:
+    storage: {{ .Values.persistentVolume.storage }}
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: {{ .Values.nfs.server }}  
+    path: {{ .Values.nfs.path }}
